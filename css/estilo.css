@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body, html, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+*{
+    font-family: 'Raleway';
+}
+:root{
+    --cor-base-botao: #2A7AE4;
+}
+header{
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    height: 115px;
+    width: 90%;
+    background-color: white;
+}
+header button{
+    border: 1px solid var(--cor-base-botao);
+    width: 182px;
+    background-color: #FFF;
+    height: 51px;
+    font-size: 16px;
+    color: var(--cor-base-botao);
+}
+nav{
+    display: flex;
+    align-items: center;
+    width: 90%;
+}
+#logo{
+    width: 176px;
+    margin-right: 50px;
+}
+#caixa_pesquisa{
+    display: flex;
+    width: 40%;
+    height: 40px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #F5F5F5;
+    border-radius: 20px;
+}
+#caixa_pesquisa input{
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    width: 90%;
+    margin-left: 2.5%;
+}
+#caixa_pesquisa img{
+    width: 5%;
+    margin-right: 2.5%;
+}
+#banner{
+    width: 100%;
+    margin-bottom: 64px;
+}
+.box_conteudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 64px;
+}
+.box_conteudo__topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.box_conteudo__topo h1{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+}
+.box_conteudo__topo a{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;;
+    color: var(--cor-base-botao);
+}
+.box_conteudo__topo img{
+    margin-left: 12px;
+}
+.box_conteudo__topo____botao{
+    display: flex;
+    height: 24px;
+    width: 98px;
+    justify-content: center;
+    align-items: center;
+}
+.box_conteudo__produtos{
+    display: flex;
+    justify-content: space-around;
+}
+.box_conteudo__produtos__produto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 12px;
+    width: 176px;
+}
+.box_conteudo__produtos__produto a{
+    color: var(--cor-base-botao);
+}
+.box_conteudo__produtos__produto img.img_produto{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+footer{
+    background-color: #EAF2FD;
+}
+#rodape_superior{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#rodape_superior img{
+    margin-top: 64px;
+}
+#links{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin-top: 64px;
+}
+#links a{
+    margin-bottom: 24px;
+}
+#links a:last-child{
+    margin-bottom: 80px;
+}
+#rodape_superior__esquerda{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#rodape_superior__logo{
+    width: 50%;
+}
+#rodape_superior__direita{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    margin-top: 64px;
+}
+#rodape_superior__direita input, #rodape_superior__direita textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    border: none;
+}
+#rodape_superior__direita___btn{
+    padding: 16px;
+    background-color: var(--cor-base-botao);
+    color: #FFF;
+}
+#rodape_inferior{
+    text-align: center;
+    width: 100%;
+    background-color: #FFF;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+#login{
+    text-align: center;
+    margin-top: 91px;
+}
+#form_login{
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#form_login input{
+    margin-bottom: 5px;
+    font-size: 16px;
+    width: 423px;
+    height: 63px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+#form_login input#form_login__btn{
+    border: none;
+    background-color: var(--cor-base-botao);
+    color: #fff;
+    margin-bottom: 91px;
+}
+#form_login{
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#form_login input{
+    margin-bottom: 5px;
+    font-size: 16px;
+    width: 423px;
+    height: 63px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+#form_login input#form_login__btn{
+    border: none;
+    background-color: var(--cor-base-botao);
+    color: #fff;
+    margin-bottom: 91px;
+}
+@media screen and (min-width: 481px) and (max-width:1024px) {
+    #logo{
+        width: 100px;
+        height: 28px;
+    }
+    header button{
+        width: 166px;
+    }
+    #banner{
+        margin-bottom: 16px;
+        background-image: url("../img/banner-tablet.svg");
+    }
+    #rodape_superior__esquerda{
+        flex-direction: column;
+        width: 30%;
+        justify-content: left;
+    }
+    #rodape_superior__direita{
+        width: 70%;
+    }
+    #rodape_superior__logo{
+        width: 100%;
+    }
+    #links{
+        margin-top: 20px;
+        align-items: flex-start;
+    }
+    .box_conteudo__produtos__produto:nth-last-child(-n+2){
+        display: none;
+    }
+    #caixa_pesquisa{
+        width: 70%;
+    }
+    #caixa_pesquisa img{
+        width: 17px;
+        height: 17px;
+    }
+    #form_login input{
+        margin-bottom: 5px;
+        font-size: 16px;
+        width: 275px;
+        height: 41px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    #logo{
+        width: 100px;
+        height: 28px;
+    }
+    header button{
+        width: 133px;
+    }
+    #banner{
+        width: 100%;
+        margin-bottom: 8px;
+        background-image: url("../img/banner-tablet.svg");
+    }
+    .box_conteudo__produtos{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .box_conteudo__produtos__produto:nth-last-child(-n+2){
+        display: none;
+    }
+    #rodape_superior{
+        flex-direction: column;
+    }
+    #rodape_superior__esquerda{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+    #rodape_superior__direita{
+        width: 100%;
+        margin-top: 0;
+    }
+    #rodape_superior__logo{
+        width: 100%;
+    }
+    #links{
+        margin-top: 20px;
+        margin-bottom: 0;
+        align-items: center;
+    }
+    #caixa_pesquisa input{
+        display: none;
+    }
+    #caixa_pesquisa{
+        background-color: transparent;
+        align-items: center;
+        justify-content: center;
+    }
+    #caixa_pesquisa img{
+        margin-left: 25%;
+        width: 17px;
+        height: 17px;
+    }
+    #form_login input{
+        margin-bottom: 5px;
+        font-size: 16px;
+        width: 275px;
+        height: 41px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+}

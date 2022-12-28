@@ -1,0 +1,92 @@
+<script src="js/crypto-js.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script type="module" src="js/app.js"></script>
+<script>
+function checaPermissao() {
+    try {
+        item = JSON.parse(localStorage.getItem("hash"));
+        if (item){
+            senhaEncriptada = CryptoJS.SHA512(item).toString();
+            if (senhaEncriptada == "e5caa147a02565898779b25ca0c5030fcb5b5d21eca0c7ae9d7e9c494b305f17976a683ae9b703aa8313a592dd901e84638ce104b71a769d14195f985813ee4d"){
+                console.log("OK")
+                document.getElementsByTagName("body")[0].style.display = "inline";
+            }else{
+                window.stop();
+                window.location = 'index.html';
+            }
+        }else{
+            window.stop();
+            window.location  = 'index.html';                
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+window.addEventListener('load', checaPermissao);
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/addproduto.css">
+    <title>AluraGeek</title>
+</head>
+<body style="display: none;">
+    <header>
+
+        <nav>
+            <a href="index.html"><img src="img/logo.svg"  id="logo" alt="Logo AluraGeek"></a>
+            <div id="caixa_pesquisa">
+                <input type="text" placeholder="O que deseja encontrar?">
+                <img src="img/lupa.svg" alt="">
+            </div>
+        </nav>
+        <a href="#"><button>Menu administrador</button></a>
+    </header>
+    <main>
+        <section id="addproduto">
+            <h1>Adicionar novo produto</h1>
+            <form action="" id="form_addproduto">
+                <input type="url" name="form_add_produto_urlimg" id="form_add_produto_urlimg" placeholder="URL da imagem" required>
+                <input type="text" name="form_addproduto__categoria" id="form_addproduto__categoria" placeholder="Categoria" required>
+                <input type="text" name="form_addproduto__senha" id="form_addproduto__senha" placeholder="Nome do produto" required>                
+                <input type="number" name="form_addproduto__senha" id="form_addproduto__senha" placeholder="Preço do produto" required>
+                <textarea name="form_addproduto__descricao" id="" cols="30" rows="10" placeholder="Descrição do produto" required></textarea>
+                <input type="submit" id="form_addproduto__btn" value="Adicionar produto">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div id="rodape_superior">
+            <div id="rodape_superior__esquerda">
+                <img id="rodape_superior__logo" src="img/logo.svg" width="176" height="50" alt="">
+                <div id="links">
+                    <a href="#" rel="noopener noreferrer">Quem somos nós</a>
+                    <a href="#" rel="noopener noreferrer">Política de privacidade</a>
+                    <a href="#" rel="noopener noreferrer">Programa fidelidade</a>
+                    <a href="#" rel="noopener noreferrer">Nossas lojas</a>
+                    <a href="#" rel="noopener noreferrer">Quero ser franqueado</a>
+                    <a href="#" rel="noopener noreferrer">Anuncie aqui</a>
+                </div>
+            </div>
+            <div id="rodape_superior__direita">
+                Fale conosco
+                <form id="form_footer" action="">
+                    <input type="text" id="nome_form__footer" name="nome" placeholder="Digite o seu nome" value="" max="40" required><br>
+                    <span id="erro_nome"></span>
+                    <textarea name="mensagem" id="msg_form__footer" name="mensagem" id="" cols="50" rows="10" maxlength="120" placeholder="Escreva sua mensagem" required></textarea><br>
+                    <span id="erro_msg"></span>
+                    <input type="submit" id="rodape_superior__direita___btn" value="Enviar mensagem">
+                </form>
+            </div>
+        </div>
+        <div id="rodape_inferior">
+            Desenvolvido por <a href="#" target="_blank" rel="noopener noreferrer">Matheus B.C</a><br>
+            2022
+        </div>
+    </footer>
+</body>
+</html>

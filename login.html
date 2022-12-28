@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>AluraGeek</title>
+</head>
+<body>
+    <header>
+
+        <nav>
+            <a href="index.html"><img src="img/logo.svg"  id="logo" alt="Logo AluraGeek"></a>
+            <div id="caixa_pesquisa">
+                <input type="text" placeholder="O que deseja encontrar?">
+                <img src="img/lupa.svg" alt="">
+            </div>
+        </nav>
+        <a href="login.html"><button>Login</button></a>
+    </header>
+    <main>
+        <section id="login">
+            <h1>Iniciar sessão</h1>
+            <form action="" id="form_login">
+                <span id="erro_conta"></span>
+                <input type="email" name="form_login__email" id="form_login__email" placeholder="Escreva seu email" required>
+                <span id="erro_email"></span>
+                <input type="password" name="form_login__senha" id="form_login__senha" placeholder="Escreva sua senha" required>
+                <span id="erro_senha"></span>
+                <input type="button" class="botaologin" id="form_login__btn" value="Entrar">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div id="rodape_superior">
+            <div id="rodape_superior__esquerda">
+                <img id="rodape_superior__logo" src="img/logo.svg" width="176" height="50" alt="">
+                <div id="links">
+                    <a href="#" rel="noopener noreferrer">Quem somos nós</a>
+                    <a href="#" rel="noopener noreferrer">Política de privacidade</a>
+                    <a href="#" rel="noopener noreferrer">Programa fidelidade</a>
+                    <a href="#" rel="noopener noreferrer">Nossas lojas</a>
+                    <a href="#" rel="noopener noreferrer">Quero ser franqueado</a>
+                    <a href="#" rel="noopener noreferrer">Anuncie aqui</a>
+                </div>
+            </div>
+            <div id="rodape_superior__direita">
+                Fale conosco
+                <form action="">
+                    <input type="text" name="nome" placeholder="Digite o seu nome" value=""><br>
+                    <textarea name="mensagem" name="mensagem" id="" cols="30" rows="10" placeholder="Escreva sua mensagem"></textarea><br>
+                    <input type="submit" id="rodape_superior__direita___btn" value="Enviar mensagem">
+                </form>
+            </div>
+        </div>
+        <div id="rodape_inferior">
+            Desenvolvido por <a href="#" target="_blank" rel="noopener noreferrer">Matheus B.C</a><br>
+            2022
+        </div>
+    </footer>
+    <script src="js/crypto-js.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/validaForm_login.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
