@@ -26,187 +26,34 @@
                     <h1>Todos os produtos</h1>
                     <a href="add_produto.html"  class="box_conteudo__topo____botao"><button>Adicionar produto</button></a>
                 </div>
-                <div class="box_conteudo__produtos">
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
-                            <img src="img/starwars-1.svg" alt="">
+                <script type="module">
+                    import Produto from "/js/produto.js";
+
+                    const produtos = Produto.getLocalStorage();
+                    const divParaAddProdutos = document.getElementById("caixadeprodutos");
+
+                    for (var i = 0; i < produtos.length; i++){
+                        var produto = produtos[i];
+                        var produtoEl = document.createElement("div");
+                        produtoEl.innerHTML = 
+                        `
+                        <div class="box_conteudo__produtos__produto">
+                            <div class="box_conteudo__produtos__produto___imagens">
+                                <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
+                                <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
+                                <img src="${produto.url}" alt="">
+                            </div>
+                            ${produto.nome}<br>
+                            <strong>R$ ${produto.preco}</strong><br>
+                            <strong><a href="">Ver produto</a></strong>
                         </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/starwars-2.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/starwars-3.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>
-                    <div class="box_conteudo__produtos__produto">                        
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/starwars-4.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/starwars-5.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>           
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/starwars-6.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>                       
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/consoles-1.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>     
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/consoles-2.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>                                                                                
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/consoles-3.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
-                            <img class="img_produto" src="img/consoles-4.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>    
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/consoles-5.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>  
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/consoles-6.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>              
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/diversos-1.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>                                                                                    
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/diversos-2.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div> 
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/diversos-3.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>  
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/diversos-4.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>            
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/diversos-5.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>         
-                    <div class="box_conteudo__produtos__produto">
-                        <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>                        
-                            <img class="img_produto" src="img/diversos-6.svg" alt="">
-                        </div>
-                        Produto XYZ<br>
-                        <strong>R$ 60,00</strong><br>
-                        <strong><a href="">Ver produto</a></strong>
-                    </div>                                                                                     
+                        `;
+                        console.log(divParaAddProdutos);
+                        divParaAddProdutos.appendChild(produtoEl);
+                    }
+                    
+                </script>
+                <div id="caixadeprodutos" class="box_conteudo__produtos">
                 </div>
             </section>                                    
     </main>
