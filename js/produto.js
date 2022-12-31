@@ -1,8 +1,17 @@
 export default class Produto {
-    constructor(url, nome, preco, descricao){
+    constructor(url, nome, preco, descricao, categoria){
         this.url = url;
         this.nome = nome;
         this.preco = preco;
         this.descricao = descricao;
+        this.categoria = categoria;
+    }
+    static getLocalStorage = () => JSON.parse(localStorage.getItem('produtos')) ?? [];
+    static setLocalStorage = (produto) => localStorage.setItem('produtos', JSON.stringify(produto));
+
+    static addProduto(p){
+        const produtos = Produto.getLocalStorage();
+        produtos.push(p);
+        Produto.setLocalStorage(produtos);
     }
 }

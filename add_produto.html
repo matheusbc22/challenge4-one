@@ -1,6 +1,7 @@
 <script src="js/crypto-js.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script type="module" src="js/app.js"></script>
+<script type="module" src="js/validaForm_addproduto.js"></script>
 <script>
 function checaPermissao() {
     try {
@@ -51,10 +52,15 @@ window.addEventListener('load', checaPermissao);
             <h1>Adicionar novo produto</h1>
             <form action="" id="form_addproduto">
                 <input type="url" name="form_add_produto_urlimg" id="form_add_produto_urlimg" placeholder="URL da imagem" required>
-                <input type="text" name="form_addproduto__categoria" id="form_addproduto__categoria" placeholder="Categoria" required>
-                <input type="text" name="form_addproduto__senha" id="form_addproduto__senha" placeholder="Nome do produto" required>                
-                <input type="number" name="form_addproduto__senha" id="form_addproduto__senha" placeholder="Preço do produto" required>
-                <textarea name="form_addproduto__descricao" id="" cols="30" rows="10" placeholder="Descrição do produto" required></textarea>
+                <span id="errourl"></span>
+                <input type="text" name="form_addproduto__categoria" id="form_addproduto__categoria" placeholder="Categoria" minlength="3" maxlength="20" required>
+                <span id="errocategoria"></span>
+                <input type="text" name="form_addproduto__nome" id="form_addproduto__nome" placeholder="Nome do produto" minlength="3" maxlength="20" required>                
+                <span id="erronome"></span>
+                <input type="number" name="form_addproduto__preco" id="form_addproduto__preco" placeholder="Preço do produto" required>
+                <span id="erropreco"></span>
+                <textarea name="form_addproduto__descricao" id="form_addproduto__descricao" cols="30" rows="10" minlength="20" maxlength="150" placeholder="Descrição do produto" required></textarea>
+                <span id="errodescricao"></span>
                 <input type="submit" id="form_addproduto__btn" value="Adicionar produto">
             </form>
         </section>
