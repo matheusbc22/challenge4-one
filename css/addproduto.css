@@ -11,7 +11,7 @@
     align-items: center;
     flex-direction: column;
 }
-#form_addproduto input, #form_addproduto textarea{
+#form_addproduto input, #form_addproduto select, #form_addproduto textarea{
     margin-bottom: 5px;
     font-size: 16px;
     width: 423px;
@@ -35,7 +35,7 @@
     align-items: center;
     flex-direction: column;
 }
-#form_addproduto input, #form_addproduto textarea{
+#form_addproduto input, #form_addproduto select, #form_addproduto textarea{
     margin-bottom: 5px;
     font-size: 16px;
     width: 423px;
@@ -52,7 +52,7 @@
 }
 
 @media screen and (min-width: 481px) and (max-width:1024px) {
-    #form_addproduto input, #form_addproduto textarea{
+    #form_addproduto input, #form_addproduto select, #form_addproduto textarea{
         margin-bottom: 5px;
         font-size: 16px;
         width: 275px;
@@ -63,7 +63,7 @@
     }
 }
 @media screen and (max-width: 480px) {
-    #form_addproduto input, #form_addproduto textarea{
+    #form_addproduto input, #form_addproduto select, #form_addproduto textarea{
         margin-bottom: 5px;
         font-size: 16px;
         width: 275px;

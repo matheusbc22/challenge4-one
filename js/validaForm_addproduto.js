@@ -27,12 +27,22 @@ preco.addEventListener("input", () => {
         preco.style["border"] = "1px solid red";
     }
 });
-categoria.addEventListener("input", () => {
-    if (categoria.value.length >= 3 && categoria.value.length <= 20){
+categoria.addEventListener("change", () => {
+    if (categoria.value != ""){
         erroCategoria.textContent = "";
         categoria.style["border"] = "none";
     }else{
-        erroCategoria.textContent = "Digite pelo menos 3 caracteres e no máximo 20.";
+        erroCategoria.textContent = "Selecione uma categoria para o produto";
+        erroCategoria.style["color"] = "red";
+        categoria.style["border"] = "1px solid red";
+    }
+});
+categoria.addEventListener("select", () => {
+    if (categoria.value != ""){
+        erroCategoria.textContent = "";
+        categoria.style["border"] = "none";
+    }else{
+        erroCategoria.textContent = "Selecione uma categoria para o produto";
         erroCategoria.style["color"] = "red";
         categoria.style["border"] = "1px solid red";
     }

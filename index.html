@@ -15,7 +15,7 @@
         <nav>
             <a href="index.html"><img src="img/logo.svg" id="logo" alt="Logo AluraGeek"></a>
             <div id="caixa_pesquisa">
-                <input type="text" placeholder="O que deseja encontrar?">
+                <input type="text" id="inputpesquisa" placeholder="O que deseja encontrar?">
                 <img src="img/lupa.svg" alt="">
             </div>
         </nav>
@@ -23,92 +23,91 @@
     </header>
     <a href="#consoles"><img id="banner" src="img/banner.png" alt=""></a>
     <main>
+        <script type="module">
+            import Produto from "/js/produto.js";
+
+            const produtos = Produto.getLocalStorage();
+            const divParaAddProdutosStarWars = document.getElementById("starwars");
+            const divParaAddProdutosConsoles = document.getElementById("consoles");
+            const divParaAddProdutosDiversos = document.getElementById("diversos");
+
+            for (var i = 0; i < produtos.length; i++){
+                var produto = produtos[i];
+                if (produtos[i].categoria == "starwars"){
+                    divParaAddProdutosStarWars.innerHTML += 
+                    `
+                    <div class="box_conteudo__produtos__produto" id="${produto.nome}">
+                        <div class="box_conteudo__produtos__produto___imagens">
+                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
+                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
+                            <img src="${produto.url}" alt="">
+                        </div>
+                        ${produto.nome}<br>
+                        <strong>R$ ${produto.preco}</strong><br>
+                        <strong><a href="">Ver produto</a></strong>
+                    </div>
+                    `;
+                }
+            }
+            for (var i = 0; i < produtos.length; i++){
+                var produto = produtos[i];
+                if (produtos[i].categoria == "consoles"){
+                    divParaAddProdutosConsoles.innerHTML += 
+                    `
+                    <div class="box_conteudo__produtos__produto" id="${produto.nome}">
+                        <div class="box_conteudo__produtos__produto___imagens">
+                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
+                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
+                            <img src="${produto.url}" alt="">
+                        </div>
+                        ${produto.nome}<br>
+                        <strong>R$ ${produto.preco}</strong><br>
+                        <strong><a href="">Ver produto</a></strong>
+                    </div>
+                    `;
+                }
+            }            
+            for (var i = 0; i < produtos.length; i++){
+                var produto = produtos[i];
+                if (produtos[i].categoria == "diversos"){
+                    divParaAddProdutosDiversos.innerHTML += 
+                    `
+                    <div class="box_conteudo__produtos__produto" id="${produto.nome}">
+                        <div class="box_conteudo__produtos__produto___imagens">
+                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
+                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
+                            <img src="${produto.url}" alt="">
+                        </div>
+                        ${produto.nome}<br>
+                        <strong>R$ ${produto.preco}</strong><br>
+                        <strong><a href="">Ver produto</a></strong>
+                    </div>
+                    `;
+                }
+            }
+        </script>
+        <section class="box_conteudo" id="resultadopesquisa" style="display: none;">
+            <div class="box_conteudo__topo">
+                <h1>Resultado da pesquisa</h1>
+            </div>
+            <div class="box_conteudo__produtos">
+
+            </div>
+        </section>
         <section class="box_conteudo">
             <div class="box_conteudo__topo">
                 <h1>Star Wars</h1>
                 <a href="produtos.html" class="box_conteudo__topo____botao">Ver tudo<img src="img/arrow-right.svg" alt="Botão para ver tudo com uma seta para a direita"></a>
             </div>
-            <div class="box_conteudo__produtos">
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/starwars-1.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/starwars-2.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/starwars-3.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/starwars-4.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/starwars-5.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>           
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/starwars-6.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>                                                          
+            <div class="box_conteudo__produtos" id="starwars">
             </div>
         </section>
-        <section class="box_conteudo" id="consoles">
+        <section class="box_conteudo">
             <div class="box_conteudo__topo">
                 <h1>Consoles</h1>
                 <a href="produtos.html" class="box_conteudo__topo____botao">Ver tudo<img src="img/arrow-right.svg" alt="Botão para ver tudo com uma seta para a direita"></a>
             </div>
-            <div class="box_conteudo__produtos">
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/consoles-1.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/consoles-2.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/consoles-3.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/consoles-4.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/consoles-5.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>           
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/consoles-6.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>                                                          
+            <div class="box_conteudo__produtos" id="consoles">
             </div>
         </section>
         <section class="box_conteudo">
@@ -116,43 +115,7 @@
                 <h1>Diversos</h1>
                 <a href="produtos.html" class="box_conteudo__topo____botao">Ver tudo<img src="img/arrow-right.svg" alt="Botão para ver tudo com uma seta para a direita"></a>
             </div>
-            <div class="box_conteudo__produtos">
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/diversos-1.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/diversos-2.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/diversos-3.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/diversos-4.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/diversos-5.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>           
-                <div class="box_conteudo__produtos__produto">
-                    <img class="img_produto" src="img/diversos-6.svg" alt="">
-                    Produto XYZ<br>
-                    <strong>R$ 60,00</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>                                                          
+            <div class="box_conteudo__produtos" id="diversos">
             </div>
         </section>                
     </main>

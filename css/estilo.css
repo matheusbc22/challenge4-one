@@ -100,7 +100,7 @@ nav{
 }
 .box_conteudo__produtos{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 .box_conteudo__produtos__produto{
     display: flex;
@@ -258,9 +258,7 @@ footer{
         margin-top: 20px;
         align-items: flex-start;
     }
-    .box_conteudo__produtos__produto:nth-last-child(-n+2){
-        display: none;
-    }
+
     #caixa_pesquisa{
         width: 70%;
     }
@@ -296,9 +294,10 @@ footer{
         justify-content: space-around;
         flex-wrap: wrap;
     }
+    /*
     .box_conteudo__produtos__produto:nth-last-child(-n+2){
         display: none;
-    }
+    }*/
     #rodape_superior{
         flex-direction: column;
     }

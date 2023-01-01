@@ -53,7 +53,12 @@ window.addEventListener('load', checaPermissao);
             <form action="" id="form_addproduto">
                 <input type="url" name="form_add_produto_urlimg" id="form_add_produto_urlimg" placeholder="URL da imagem" required>
                 <span id="errourl"></span>
-                <input type="text" name="form_addproduto__categoria" id="form_addproduto__categoria" placeholder="Categoria" minlength="3" maxlength="20" required>
+                <select name="form_addproduto__categoria" id="form_addproduto__categoria" required>
+                    <option value="" disabled selected>Selecione uma categoria</option>
+                    <option value="starwars">Star Wars</option>
+                    <option value="consoles">Consoles</option>
+                    <option value="diversos">Diversos</option>
+                </select>
                 <span id="errocategoria"></span>
                 <input type="text" name="form_addproduto__nome" id="form_addproduto__nome" placeholder="Nome do produto" minlength="3" maxlength="20" required>                
                 <span id="erronome"></span>
