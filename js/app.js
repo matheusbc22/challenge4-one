@@ -1,4 +1,4 @@
-import validaFormFooter from "js/validaForm_footer.js";
+import validaFormFooter from "./js/validaForm_footer.js";
 import Produto from "js/produto.js";
 
 //Barra de pesquisa
