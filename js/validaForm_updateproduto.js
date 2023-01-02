@@ -1,4 +1,4 @@
-import Produto from "/js/Produto.js";
+import Produto from "./js/Produto.js";
 
 const form = document.getElementById("form_atualizar");
 const url = document.getElementById("form_atualizar_urlimg");
