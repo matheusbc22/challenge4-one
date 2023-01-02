@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/estilo.css">
     <title>AluraGeek</title>
     <script type="module" src="/js/produto.js"></script>
+    <script src="js/crypto-js.min.js"></script>
+    <script src="js/jquery.min.js"></script>
 </head>
 <body>
     <script type="module" src="js/app.js"></script>
@@ -19,7 +21,37 @@
                 <img src="img/lupa.svg" alt="">
             </div>
         </nav>
-        <a href="login.html"><button>Login</button></a>
+        <div id="loginbtn"></div>
+        <script>
+                try {
+                    item = JSON.parse(localStorage.getItem("hash"));
+                    if (item){
+                        senhaEncriptada = CryptoJS.SHA512(item).toString();
+                        if (senhaEncriptada == "e5caa147a02565898779b25ca0c5030fcb5b5d21eca0c7ae9d7e9c494b305f17976a683ae9b703aa8313a592dd901e84638ce104b71a769d14195f985813ee4d"){
+                            
+                        }else{
+                            const headerEl = document.getElementById("loginbtn");
+                            const loginButton = document.createElement("a");
+                            loginButton.href = "login.html";
+                            const button = document.createElement("button");
+                            button.textContent = "Login";
+                            loginButton.appendChild(button);
+                            headerEl.appendChild(loginButton);
+                        }
+                    }else{
+                        const headerEl = document.getElementById("loginbtn");
+                        const loginButton = document.createElement("a");
+                        loginButton.href = "login.html";
+                        const button = document.createElement("button");
+                        button.textContent = "Login";
+                        loginButton.appendChild(button);
+                        headerEl.appendChild(loginButton);
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+        </script>
+        
     </header>
     <a href="#consoles"><img id="banner" src="img/banner.png" alt=""></a>
     <main>
@@ -38,8 +70,6 @@
                     `
                     <div class="box_conteudo__produtos__produto" id="${produto.nome}">
                         <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
                             <img src="${produto.url}" alt="">
                         </div>
                         ${produto.nome}<br>
@@ -56,8 +86,6 @@
                     `
                     <div class="box_conteudo__produtos__produto" id="${produto.nome}">
                         <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
                             <img src="${produto.url}" alt="">
                         </div>
                         ${produto.nome}<br>
@@ -74,8 +102,6 @@
                     `
                     <div class="box_conteudo__produtos__produto" id="${produto.nome}">
                         <div class="box_conteudo__produtos__produto___imagens">
-                            <a href="#"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                            <a href="#"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
                             <img src="${produto.url}" alt="">
                         </div>
                         ${produto.nome}<br>

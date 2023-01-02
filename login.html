@@ -47,9 +47,11 @@
             </div>
             <div id="rodape_superior__direita">
                 Fale conosco
-                <form action="">
-                    <input type="text" name="nome" placeholder="Digite o seu nome" value=""><br>
-                    <textarea name="mensagem" name="mensagem" id="" cols="30" rows="10" placeholder="Escreva sua mensagem"></textarea><br>
+                <form id="form_footer" action="">
+                    <input type="text" id="nome_form__footer" name="nome" placeholder="Digite o seu nome" value="" max="40" required><br>
+                    <span id="erro_nome"></span>
+                    <textarea name="mensagem" id="msg_form__footer" name="mensagem" id="" cols="50" rows="10" maxlength="120" placeholder="Escreva sua mensagem" required></textarea><br>
+                    <span id="erro_msg"></span>
                     <input type="submit" id="rodape_superior__direita___btn" value="Enviar mensagem">
                 </form>
             </div>
@@ -62,6 +64,6 @@
     <script src="js/crypto-js.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/validaForm_login.js"></script>
-    <script src="js/app.js"></script>
+    <script  type="module" src="js/app.js"></script>
 </body>
 </html>

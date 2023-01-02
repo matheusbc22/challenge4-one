@@ -34,4 +34,18 @@ export default class Produto {
             }
         }
     }
+    static updateProduto(nome, produto){
+        if (nome != "" && nome != null && nome != undefined){
+            if (produto != "" && produto != null && produto != undefined){
+                let todosOsProdutos = Produto.getLocalStorage();
+                let produtoParaAtualizar = todosOsProdutos.find(p => p.nome === nome);
+                produtoParaAtualizar.nome = produto.nome;
+                produtoParaAtualizar.url = produto.url;
+                produtoParaAtualizar.preco = produto.preco;
+                produtoParaAtualizar.descricao = produto.descricao;
+                produtoParaAtualizar.categoria = produto.categoria;
+                Produto.setLocalStorage(todosOsProdutos);
+            }
+        }
+    }
 }

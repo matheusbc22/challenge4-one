@@ -1,7 +1,7 @@
 <script src="js/crypto-js.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script type="module" src="js/app.js"></script>
-<script type="module" src="js/validaForm_addproduto.js"></script>
+<script type="module" src="js/validaForm_updateproduto.js"></script>
 <script>
 function checaPermissao() {
     try {
@@ -31,7 +31,7 @@ window.addEventListener('load', checaPermissao);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="css/addproduto.css">
+    <link rel="stylesheet" href="css/updateproduto.css">
     <title>AluraGeek</title>
 </head>
 <body style="display: none;">
@@ -47,25 +47,24 @@ window.addEventListener('load', checaPermissao);
         <a href="#"><button>Menu administrador</button></a>
     </header>
     <main>
-        <section id="addproduto">
-            <h1>Adicionar novo produto</h1>
-            <form action="" id="form_addproduto">
-                <input type="url" name="form_add_produto_urlimg" id="form_add_produto_urlimg" placeholder="URL da imagem" required>
+        <section id="updateproduto">
+            <h1>Atualizar produto</h1>
+            <form id="form_atualizar">
+                <input type="url" name="form_atualizar_urlimg" id="form_atualizar_urlimg" placeholder="URL da imagem" required>
                 <span id="errourl"></span>
-                <select name="form_addproduto__categoria" id="form_addproduto__categoria" required>
-                    <option value="" disabled selected>Selecione uma categoria</option>
+                <select name="form_atualizar__categoria" id="form_atualizar__categoria" required>
                     <option value="starwars">Star Wars</option>
                     <option value="consoles">Consoles</option>
                     <option value="diversos">Diversos</option>
                 </select>
                 <span id="errocategoria"></span>
-                <input type="text" name="form_addproduto__nome" id="form_addproduto__nome" placeholder="Nome do produto" minlength="3" maxlength="20" required>                
+                <input type="text" name="form_atualizar__nome" id="form_atualizar__nome" placeholder="Nome do produto" minlength="3" maxlength="20" required>                
                 <span id="erronome"></span>
-                <input type="number" name="form_addproduto__preco" id="form_addproduto__preco" placeholder="Preço do produto" required>
+                <input type="number" name="form_atualizar__preco" id="form_atualizar__preco" placeholder="Preço do produto" required>
                 <span id="erropreco"></span>
-                <textarea name="form_addproduto__descricao" id="form_addproduto__descricao" cols="30" rows="10" minlength="20" maxlength="150" placeholder="Descrição do produto" required></textarea>
+                <textarea name="form_atualizar__descricao" id="form_atualizar__descricao" cols="30" rows="10" minlength="20" maxlength="150" placeholder="Descrição do produto" required></textarea>
                 <span id="errodescricao"></span>
-                <input type="submit" id="form_addproduto__btn" value="Adicionar produto">
+                <input type="submit" id="form_atualizar__btn" value="Atualizar produto">
             </form>
         </section>
     </main>

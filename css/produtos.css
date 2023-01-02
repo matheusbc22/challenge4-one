@@ -1,6 +1,3 @@
-.box_conteudo__produtos__produto:nth-last-child(-n+2){
-    display: inline;
-}
 .box_conteudo__produtos{
     flex-wrap: wrap;
 }

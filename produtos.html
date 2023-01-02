@@ -1,3 +1,27 @@
+<script src="js/crypto-js.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script>
+function checaPermissao() {
+    try {
+        item = JSON.parse(localStorage.getItem("hash"));
+        if (item){
+            senhaEncriptada = CryptoJS.SHA512(item).toString();
+            if (senhaEncriptada == "e5caa147a02565898779b25ca0c5030fcb5b5d21eca0c7ae9d7e9c494b305f17976a683ae9b703aa8313a592dd901e84638ce104b71a769d14195f985813ee4d"){
+                document.getElementsByTagName("body")[0].style.display = "inline";
+            }else{
+                window.stop();
+                window.location = 'index.html';
+            }
+        }else{
+            window.stop();
+            window.location  = 'index.html';                
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+window.addEventListener('load', checaPermissao);
+</script>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,7 +32,7 @@
     <link rel="stylesheet" href="css/produtos.css">
     <title>AluraGeek</title>
 </head>
-<body>
+<body style="display: none;">
     <header>
 
         <nav>
@@ -46,8 +70,8 @@
                         `
                         <div class="box_conteudo__produtos__produto" id="${produto.nome}">
                             <div class="box_conteudo__produtos__produto___imagens">
-                                <a href="#" id="${produto.nome}" class="delete"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.svg" alt=""></a>
-                                <a href="#" class="update"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.svg" alt=""></a>
+                                <a href="#" id="${produto.nome}" class="delete"><img class="box_conteudo__produtos__produto___delete" src="img/delete-icon.webp" alt=""></a>
+                                <a href="updateprodutos.html?nome=${produto.nome}" class="update"><img class="box_conteudo__produtos__produto___edit" src="img/edit-icon.webp" alt=""></a>
                                 <img src="${produto.url}" alt="">
                             </div>
                             ${produto.nome}<br>
@@ -56,7 +80,6 @@
                         </div>
                         `;
                     }
-                    
                 </script>
                 <div id="caixadeprodutos" class="box_conteudo__produtos">
                 </div>

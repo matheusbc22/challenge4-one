@@ -79,6 +79,7 @@ const login = (email, senha) => {
         senhaEncriptada = CryptoJS.SHA512(senha).toString();
         if (senhaEncriptada == "e5caa147a02565898779b25ca0c5030fcb5b5d21eca0c7ae9d7e9c494b305f17976a683ae9b703aa8313a592dd901e84638ce104b71a769d14195f985813ee4d"){
             localStorage.setItem("hash", JSON.stringify(senha))
+            window.location.replace("index.html");
         }else{
             erroSenha.textContent = "O email não pode ter mais que 120 caracteres.";
             senha.style["border"] = "1px solid red";
@@ -86,8 +87,6 @@ const login = (email, senha) => {
             btn.disabled = true;
             btn.style["background-color"] = "gray";   
         }
-    }else{
-        console.log("Email incorreto");
     }
 }
 const emailValido = (email) => {

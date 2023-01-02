@@ -4,46 +4,49 @@ import Produto from "/js/produto.js";
 //Barra de pesquisa
 const barradepesquisa = document.getElementById("inputpesquisa");
 const caixaresultadopesquisa = document.getElementById("resultadopesquisa");
-barradepesquisa.addEventListener("input", () => {
-    if (barradepesquisa.value != ""){
-        caixaresultadopesquisa.innerHTML = 
-        `
-        <div class="box_conteudo__topo">
-            <h1>Resultado da pesquisa</h1>
-        </div>
-        <div class="box_conteudo__produtos">
-
-        </div>
-        `;
-        caixaresultadopesquisa.style["display"] = "flex";
-        let resultadoPesquisa = Produto.searchProduto(barradepesquisa.value);
-        if (resultadoPesquisa != "" && resultadoPesquisa != undefined){
-                caixaresultadopesquisa.innerHTML += 
-                `
-                <div class="box_conteudo__produtos__produto" id="${resultadoPesquisa.nome}">
-                    <div class="box_conteudo__produtos__produto___imagens">
-                        <img src="${resultadoPesquisa.url}" alt="">
+if (barradepesquisa != null && barradepesquisa != undefined){
+    barradepesquisa.addEventListener("input", () => {
+        if (barradepesquisa.value != ""){
+            caixaresultadopesquisa.innerHTML = 
+            `
+            <div class="box_conteudo__topo">
+                <h1>Resultado da pesquisa</h1>
+            </div>
+            <div class="box_conteudo__produtos">
+    
+            </div>
+            `;
+            caixaresultadopesquisa.style["display"] = "flex";
+            let resultadoPesquisa = Produto.searchProduto(barradepesquisa.value);
+            if (resultadoPesquisa != "" && resultadoPesquisa != undefined){
+                    caixaresultadopesquisa.innerHTML += 
+                    `
+                    <div class="box_conteudo__produtos__produto" id="${resultadoPesquisa.nome}">
+                        <div class="box_conteudo__produtos__produto___imagens">
+                            <img src="${resultadoPesquisa.url}" alt="">
+                        </div>
+                        ${resultadoPesquisa.nome}<br>
+                        <strong>R$ ${resultadoPesquisa.preco}</strong><br>
+                        <strong><a href="">Ver produto</a></strong>
                     </div>
-                    ${resultadoPesquisa.nome}<br>
-                    <strong>R$ ${resultadoPesquisa.preco}</strong><br>
-                    <strong><a href="">Ver produto</a></strong>
-                </div>
-                `;
-                resultadoPesquisa = undefined;
+                    `;
+                    resultadoPesquisa = undefined;
+            }
+        }else{
+            caixaresultadopesquisa.style["display"] = "none";
+            caixaresultadopesquisa.innerHTML = 
+            `
+            <div class="box_conteudo__topo">
+                <h1>Resultado da pesquisa</h1>
+            </div>
+            <div class="box_conteudo__produtos">
+    
+            </div>
+            `;
         }
-    }else{
-        caixaresultadopesquisa.style["display"] = "none";
-        caixaresultadopesquisa.innerHTML = 
-        `
-        <div class="box_conteudo__topo">
-            <h1>Resultado da pesquisa</h1>
-        </div>
-        <div class="box_conteudo__produtos">
+    })
+}
 
-        </div>
-        `;
-    }
-})
 //Deletando produto
 const botaoParaDeletar = document.getElementsByClassName("delete");
 
