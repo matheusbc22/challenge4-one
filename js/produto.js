@@ -23,4 +23,15 @@ export default class Produto {
             }
         }
     }
+    static deletar(nome){
+        if (nome != "" && nome != undefined){
+            let allProdutos = this.getLocalStorage();
+            for (let i = 0; i < allProdutos.length; i++){
+                if (allProdutos[i].nome == nome){
+                    allProdutos.splice(i, 1);
+                    Produto.setLocalStorage(allProdutos);
+                }
+            }
+        }
+    }
 }

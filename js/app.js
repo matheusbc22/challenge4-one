@@ -1,6 +1,7 @@
 import validaFormFooter from "/js/validaForm_footer.js";
 import Produto from "/js/produto.js";
 
+//Barra de pesquisa
 const barradepesquisa = document.getElementById("inputpesquisa");
 const caixaresultadopesquisa = document.getElementById("resultadopesquisa");
 barradepesquisa.addEventListener("input", () => {
@@ -43,4 +44,17 @@ barradepesquisa.addEventListener("input", () => {
         `;
     }
 })
+//Deletando produto
+const botaoParaDeletar = document.getElementsByClassName("delete");
+
+for (let i = 0; i < botaoParaDeletar.length; i++) {
+  botaoParaDeletar[i].addEventListener("click", () => {
+    let confirmaDeletar = confirm("Você tem certeza que quer deletar o produto " + botaoParaDeletar[i].id + "?");
+    if (confirmaDeletar){
+        Produto.deletar(botaoParaDeletar[i].id);
+        location.reload();
+    }
+  });
+}
+
 validaFormFooter();
