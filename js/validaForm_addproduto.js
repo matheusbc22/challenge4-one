@@ -1,4 +1,4 @@
-import Produto from "./Produto.js";
+import Produto from "/Produto.js";
 
 const form = document.getElementById("form_addproduto");
 const url = document.getElementById("form_add_produto_urlimg");
