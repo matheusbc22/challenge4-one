@@ -9,17 +9,26 @@
     <title>AluraGeek</title>
 </head>
 <body>
+    <script type="module" src="js/app.js"></script>
     <header>
 
         <nav>
             <a href="index.html"><img src="img/logo.svg"  id="logo" alt="Logo AluraGeek"></a>
             <div id="caixa_pesquisa">
-                <input type="text" placeholder="O que deseja encontrar?">
+                <input type="text" id="inputpesquisa" placeholder="O que deseja encontrar?">
                 <img src="img/lupa.svg" alt="">
             </div>
         </nav>
     </header>
     <main>
+        <section class="box_conteudo" id="resultadopesquisa" style="display: none;">
+            <div class="box_conteudo__topo">
+                <h1>Resultado da pesquisa</h1>
+            </div>
+            <div class="box_conteudo__produtos">
+
+            </div>
+        </section>
         <section id="produtos">
             <section class="box_conteudo">
                 <div class="box_conteudo__topo">

@@ -14,4 +14,13 @@ export default class Produto {
         produtos.push(p);
         Produto.setLocalStorage(produtos);
     }
+    static searchProduto(nome){
+        const allProdutos = this.getLocalStorage();
+        const nomeLowercase = nome.toLowerCase();
+        for (let i = 0; i < allProdutos.length; i++){
+            if (allProdutos[i].nome.toLowerCase() == nomeLowercase){
+                return allProdutos[i];
+            }
+        }
+    }
 }
