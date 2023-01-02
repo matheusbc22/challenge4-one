@@ -1,5 +1,5 @@
-import validaFormFooter from "/js/validaForm_footer.js";
-import Produto from "/js/produto.js";
+import validaFormFooter from "/challenge4-one/js/validaForm_footer.js";
+import Produto from "/challenge4-one/js/produto.js";
 
 //Barra de pesquisa
 const barradepesquisa = document.getElementById("inputpesquisa");
